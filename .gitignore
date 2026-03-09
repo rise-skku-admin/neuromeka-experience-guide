@@ -1,0 +1,39 @@
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+
+# Testing / tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Sphinx documentation generated files
+_build/
+_site/
+
+# Editor / OS
+.vscode/
+.idea/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
