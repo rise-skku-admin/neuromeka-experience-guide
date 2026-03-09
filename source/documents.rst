@@ -12,10 +12,6 @@ ROS Manual
 - `Indy ros <https://github.com/neuromeka-robotics/indy-ros>`_
 - `Indy ros examples <https://github.com/neuromeka-robotics/indy-ros-examples>`_
 
-IndySDK Manual
-----------------
-IndySDK Version3
-~~~~~~~~~~~~~~~~~
 
 **SDK3 Deployment**
 
@@ -45,3 +41,4 @@ IndySDK Version3
 STEP3 : 64bit VScode에서 SSH접속 가능
 
 STEP2 : 32bit VScode에서 SSH접속 불가능(vim, nano, vi 등을 이용해 터미널 편집 필요)
+

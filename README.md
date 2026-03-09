@@ -1,6 +1,92 @@
-# 다시
+# 웹페이지 관리
+## 활성화
+### GitHub Pages 웹 페이지 활성화 방법
 
-## 폴더 구조
+GitHub Pages를 이용하여 웹 페이지를 배포하는 기본 절차입니다.
+
+---
+
+### 1. Public Repository 생성
+
+GitHub에서 웹 페이지 업로드를 위한 **Public Repository**를 생성합니다.
+
+---
+
+### 2. GitHub Pages 설정
+
+Repository에서 아래 메뉴로 이동합니다.
+
+Settings → Pages
+
+다음 항목을 설정합니다.
+
+Source : GitHub Actions
+
+---
+
+### 3. 웹 페이지 내용 작성 또는 복사
+
+웹 페이지에 사용할 파일들을 작성하거나 템플릿을 복사하여 Repository에 추가합니다.
+
+예시 파일 구조
+```
+.github/
+workflows/
+docs/
+index.md
+_config.yml
+```
+---
+
+### 4. GitHub Actions 권한 설정 확인
+
+.github/workflows 디렉토리에 있는 workflow 파일에서 아래 권한이 설정되어 있는지 확인합니다.
+```
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+```
+이 설정은 GitHub Actions가 Pages에 웹 페이지를 배포할 수 있도록 하는 권한입니다.
+
+---
+
+### 5. 변경 사항 Push
+
+웹 페이지 내용을 작성한 후 Repository에 push 합니다.
+```
+git add .
+git commit -m "update webpage"
+git push
+```
+Push가 완료되면 GitHub Actions가 자동으로 실행되어 페이지가 빌드 및 배포됩니다.
+
+---
+
+### 6. Actions 실행 상태 확인
+
+Repository 상단 메뉴에서 **Actions** 탭을 확인합니다.
+
+- 초록색 체크 표시 → 정상 배포 완료  
+- 실패한 경우  
+  - 실행된 workflow 클릭  
+  - 로그를 확인하여 오류 원인을 확인
+
+---
+
+### 웹 페이지 주소
+
+배포가 완료되면 아래 주소에서 웹 페이지를 확인할 수 있습니다.
+
+https://`<github-username>`.github.io/`<repository-name>`/
+
+예시
+
+https://username.github.io/robotics-in-practice/
+
+---
+
+## 현재 폴더 구조
 
 - `source/`: Sphinx 소스 문서
 - `build/`: 로컬 빌드 산출물(업로드 대상 아님)
@@ -8,6 +94,9 @@
 - `.gitignore`: 업로드 제외 항목 관리
 
 ## 로컬 실행/빌드
+
+### Requirements
+- Python 3.11+
 
 ### 1) 의존성 설치
 
@@ -18,7 +107,7 @@ pip install -r requirements.txt
 ```
 
 ### 2) 문서 빌드
-
+문서 빌드는 로컬에서 해당 페이지가 잘 생성되는지 확인을 하기위한 용도이므로, 업로드시 삭제 혹은 .gitignore에 포함 시켜야 한다.
 ```bash
 make html
 ```

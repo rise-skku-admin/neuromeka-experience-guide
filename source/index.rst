@@ -29,4 +29,5 @@ Neuromeca Indy7 Manual
    documents
    overview
    as_manual
+   user_comments
 
