@@ -7,10 +7,10 @@ API의 경우 버전이 계속 수정되니 반드시 현재 펌웨어 버전에
 
 Official Document
 -----------------
-- `DCP3 : gRPC(google Remote Procedure Call) 기반의 통신 프로토콜<http://docs.neuromeka.com/3.4.0/kr/IndyAPI/indydcp3_1/>`
-- `DCP2 : TCP/IP 기반의 통신 프로토콜<http://docs.neuromeka.com/3.4.0/kr/IndyAPI/indydcp2_1/>`
-- `ROS : Robot Operating System<http://docs.neuromeka.com/3.4.0/kr/ROS/introduction/#_2>`
-- `ROS2 : Robot Operating System 2<http://docs.neuromeka.com/3.4.0/kr/ROS2/introduction/>`
+- `DCP3 : gRPC(google Remote Procedure Call) 기반의 통신 프로토콜 <http://docs.neuromeka.com/3.4.0/kr/IndyAPI/indydcp3_1/>`_
+- `DCP2 : TCP/IP 기반의 통신 프로토콜 <http://docs.neuromeka.com/3.4.0/kr/IndyAPI/indydcp2_1/>`_
+- `ROS : Robot Operating System <http://docs.neuromeka.com/3.4.0/kr/ROS/introduction/#_2>`_
+- `ROS2 : Robot Operating System 2 <http://docs.neuromeka.com/3.4.0/kr/ROS2/introduction/>`_
 
 Indy API
 -----------------
@@ -87,14 +87,17 @@ IndyDCP3 클래스 객체를 생성한 후, 로봇과 통신을 위해 다음과
      - 힘/토크 센서 데이터
    * - ``stop_motion(stop_category)``
      - stop_category에 따라 모션을 멈추는 함수
-     - stop_category : CAT0(power off), CAT1(stop & power off), CAT2(stop)
+
+       - ``stop_category`` : CAT0(power off), CAT1(stop & power off), CAT2(stop)
    * - ``movej(input)``
      - 관절 위치 제어 명령
-     - input : 관절 위치 리스트 (단위: degree)
-     - input(option) : vel_ratio, acc_ratio, jtarget, base_type
+
+       - ``input`` : 관절 위치 리스트 (단위: degree)
+       - ``input(option)`` : vel_ratio, acc_ratio, jtarget, base_type
    * - ``movel(input)``
      - 작업공간에서의 선형 위치 제어 명령
-     - input : 작업공간 위치 리스트 (단위: mm, degree)
-     - input(option) : vel_ratio, acc_ratio, teaching_mode, base_type
+
+       - ``input`` : 작업공간 위치 리스트 (단위: mm, degree)
+       - ``input(option)`` : vel_ratio, acc_ratio, teaching_mode, base_type
    * - ``recover()``
      - 에러나 충돌 상황에서 로봇을 회복시키는 함수
